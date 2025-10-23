@@ -52,7 +52,7 @@ with st.sidebar:
     st.markdown("Insira os dados para calcular o valuation.")
 
     st.header("Dados Atuais")
-    lucro_base_anual = st.number_input("Fluxo de Caixa Livre (R$)", min_value=0, value=500000, step=10000)
+    lucro_base_anual = st.number_input("Fluxo de Caixa Livre Anual (R$)", min_value=0, value=500000, step=10000)
 
     st.header("Premissas de Projeção")
     crescimento_projecao_perc = st.slider("Crescimento do Fluxo de Caixa Livre (% a.a.)", 0.0, 30.0, 5.0, 0.5)
@@ -106,6 +106,7 @@ else:
 st.markdown("---")
 
 st.caption("Esta é uma calculadora simplificada feita pela Virtus Consultoria para fins de demonstração.")
+
 
 
 
