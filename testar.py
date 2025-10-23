@@ -20,7 +20,6 @@ def calcular_valuation_completo(lucro_inicial, taxa_crescimento_proj, taxa_desco
         
         detalhes_projecao.append({
             "Ano": ano,
-            # ALTERAÇÃO 1: Nome da coluna alterado aqui
             "Fluxo de Caixa Livre Projetado": lucro_projetado,
             "Valor Presente": valor_presente_lucro
         })
@@ -48,7 +47,10 @@ st.set_page_config(
 # --- Barra Lateral para Inputs ---
 with st.sidebar:
     st.image("https://virtusconsultoria.com.br/wp-content/uploads/2024/08/marcas-virtus.png", width=200)
-    st.text("https://virtusconsultoria.com.br/")
+    
+    # ALTERAÇÃO 1: Adicionado o link abaixo da imagem
+    st.markdown("[https://virtusconsultoria.com.br/](https://virtusconsultoria.com.br/)")
+    
     st.title("⚙️ Premissas do Valuation")
     st.markdown("Insira os dados para calcular o valuation.")
 
@@ -99,17 +101,15 @@ else:
     # 3. Tabela com a Projeção Ano a Ano
     st.subheader("Projeção do Fluxo de Caixa Livre")
     
-    # ALTERAÇÃO 2: Adiciona a métrica com a soma do Valor Presente da projeção
     st.metric(label="Soma do Valor Presente da Projeção", value=f"R$ {vp_projecao:,.2f}")
 
     df_para_exibir = pd.DataFrame(projecao_detalhada)
     
-    # ALTERAÇÃO 3: Garante que a formatação seja aplicada a ambas as colunas monetárias
-    st.dataframe(df_para_exibir.style.format({
+    # ALTERAÇÃO 2: Adicionado .set_index("Ano") para usar a coluna "Ano" como índice da tabela
+    st.dataframe(df_para_exibir.set_index("Ano").style.format({
         "Fluxo de Caixa Livre Projetado": "R$ {:,.2f}",
         "Valor Presente": "R$ {:,.2f}"
     }))
 
 st.markdown("---")
 st.caption("Esta é uma calculadora simplificada feita pela Virtus Consultoria para fins de demonstração.")
-
