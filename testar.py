@@ -86,7 +86,7 @@ else:
     # 2. Gráfico de Composição do Valor
     st.subheader("Composição do Valor")
     df_composicao = pd.DataFrame({
-        'Componente': ['Valor da Projeção Explícita', 'Valor da Perpetuidade'],
+        'Componente': ['Projeção Explícita', 'Perpetuidade'],
         'Valor': [vp_projecao, vp_perpetuidade]
     })
     fig = px.pie(df_composicao, values='Valor', names='Componente',
@@ -104,4 +104,5 @@ else:
     }))
 
 st.markdown("---")
-st.caption("Esta é uma calculadora simplificada para fins educacionais e de demonstração.")
+
+st.caption("Esta é uma calculadora simplificada feita pela Virtus Consultoria para fins de demonstração.")
