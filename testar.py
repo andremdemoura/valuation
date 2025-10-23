@@ -96,16 +96,17 @@ else:
     st.plotly_chart(fig, use_container_width=True)
 
     # 3. Tabela com a Projeção Ano a Ano
-    st.subheader("Projeção de Lucros e Valor Presente")
+    st.subheader("Projeção do Fluxo de Caixa Livre")
     df_para_exibir = pd.DataFrame(projecao_detalhada)
     st.dataframe(df_para_exibir.style.format({
-        "Lucro Projetado": "R$ {:,.2f}",
+        "Fluxo de Caixa Livre Projetado": "R$ {:,.2f}",
         "Valor Presente": "R$ {:,.2f}"
     }))
 
 st.markdown("---")
 
 st.caption("Esta é uma calculadora simplificada feita pela Virtus Consultoria para fins de demonstração.")
+
 
 
 
