@@ -113,3 +113,4 @@ else:
 
 st.markdown("---")
 st.caption("Esta é uma calculadora simplificada feita pela Virtus Consultoria para fins de demonstração.")
+
