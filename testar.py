@@ -63,7 +63,7 @@ with st.sidebar:
     crescimento_perpetuo_perc = st.slider("Crescimento na Perpetuidade (%)", 0.0, 5.0, 2.0, 0.1)
 
 # --- Página Principal para Resultados ---
-st.title("💰 Resultado do Valuation")
+st.title("💰 Simulação do Valuation")
 st.markdown("---")
 
 # Executa o cálculo com os inputs da barra lateral (convertendo % para decimal)
@@ -106,4 +106,5 @@ else:
 st.markdown("---")
 
 st.caption("Esta é uma calculadora simplificada feita pela Virtus Consultoria para fins de demonstração.")
+
 
