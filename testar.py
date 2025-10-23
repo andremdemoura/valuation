@@ -52,14 +52,14 @@ with st.sidebar:
     st.markdown("Insira os dados para calcular o valuation.")
 
     st.header("Dados Atuais")
-    lucro_base_anual = st.number_input("Lucro Líquido do Último Ano (R$)", min_value=0, value=500000, step=10000)
+    lucro_base_anual = st.number_input("Fluxo de Caixa Livre (R$)", min_value=0, value=500000, step=10000)
 
     st.header("Premissas de Projeção")
-    crescimento_projecao_perc = st.slider("Crescimento do Lucro (% a.a.)", 0.0, 30.0, 5.0, 0.5)
+    crescimento_projecao_perc = st.slider("Crescimento do Fluxo de Caixa Livre (% a.a.)", 0.0, 30.0, 5.0, 0.5)
     periodo_em_anos = st.slider("Anos de Projeção", 3, 15, 5)
     
     st.header("Premissas de Desconto")
-    taxa_de_desconto_perc = st.slider("Taxa de Desconto (WACC) (%)", 5.0, 25.0, 18.0, 0.5)
+    taxa_de_desconto_perc = st.slider("Taxa de Desconto (%)", 5.0, 25.0, 18.0, 0.5)
     crescimento_perpetuo_perc = st.slider("Crescimento na Perpetuidade (%)", 0.0, 5.0, 2.0, 0.1)
 
 # --- Página Principal para Resultados ---
@@ -106,5 +106,6 @@ else:
 st.markdown("---")
 
 st.caption("Esta é uma calculadora simplificada feita pela Virtus Consultoria para fins de demonstração.")
+
 
 
