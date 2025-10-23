@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 
 # --- FUNÇÃO DE VALUATION OTIMIZADA PARA STREAMLIT ---
-# (Removidos os 'print' e ajustado o retorno)
 def calcular_valuation_completo(lucro_inicial, taxa_crescimento_proj, taxa_desconto, anos_projecao, taxa_crescimento_perpetuo):
     # Condição de erro: retorna valores que podem ser tratados pela interface
     if taxa_desconto <= taxa_crescimento_perpetuo:
@@ -21,7 +20,8 @@ def calcular_valuation_completo(lucro_inicial, taxa_crescimento_proj, taxa_desco
         
         detalhes_projecao.append({
             "Ano": ano,
-            "Lucro Projetado": lucro_projetado,
+            # ALTERAÇÃO 1: Nome da coluna alterado aqui
+            "Fluxo de Caixa Livre Projetado": lucro_projetado,
             "Valor Presente": valor_presente_lucro
         })
     
@@ -97,17 +97,17 @@ else:
 
     # 3. Tabela com a Projeção Ano a Ano
     st.subheader("Projeção do Fluxo de Caixa Livre")
+    
+    # ALTERAÇÃO 2: Adiciona a métrica com a soma do Valor Presente da projeção
+    st.metric(label="Soma do Valor Presente da Projeção", value=f"R$ {vp_projecao:,.2f}")
+
     df_para_exibir = pd.DataFrame(projecao_detalhada)
+    
+    # ALTERAÇÃO 3: Garante que a formatação seja aplicada a ambas as colunas monetárias
     st.dataframe(df_para_exibir.style.format({
         "Fluxo de Caixa Livre Projetado": "R$ {:,.2f}",
         "Valor Presente": "R$ {:,.2f}"
     }))
 
 st.markdown("---")
-
 st.caption("Esta é uma calculadora simplificada feita pela Virtus Consultoria para fins de demonstração.")
-
-
-
-
-
