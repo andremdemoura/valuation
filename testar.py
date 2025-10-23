@@ -48,6 +48,7 @@ st.set_page_config(
 # --- Barra Lateral para Inputs ---
 with st.sidebar:
     st.image("https://virtusconsultoria.com.br/wp-content/uploads/2024/08/marcas-virtus.png", width=200)
+    st.text("https://virtusconsultoria.com.br/")
     st.title("⚙️ Premissas do Valuation")
     st.markdown("Insira os dados para calcular o valuation.")
 
@@ -111,3 +112,4 @@ else:
 
 st.markdown("---")
 st.caption("Esta é uma calculadora simplificada feita pela Virtus Consultoria para fins de demonstração.")
+
