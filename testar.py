@@ -47,7 +47,7 @@ st.set_page_config(
 
 # --- Barra Lateral para Inputs ---
 with st.sidebar:
-    st.image("https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png", width=200)
+    st.image("https://virtusconsultoria.com.br/wp-content/uploads/2024/08/marcas-virtus.png", width=200)
     st.title("⚙️ Premissas do Valuation")
     st.markdown("Insira os dados para calcular o valuation.")
 
@@ -86,7 +86,7 @@ else:
     # 2. Gráfico de Composição do Valor
     st.subheader("Composição do Valor")
     df_composicao = pd.DataFrame({
-        'Componente': ['Projeção Explícita', 'Perpetuidade'],
+        'Componente': ['Projeção', 'Perpetuidade'],
         'Valor': [vp_projecao, vp_perpetuidade]
     })
     fig = px.pie(df_composicao, values='Valor', names='Componente',
@@ -106,3 +106,4 @@ else:
 st.markdown("---")
 
 st.caption("Esta é uma calculadora simplificada feita pela Virtus Consultoria para fins de demonstração.")
+
